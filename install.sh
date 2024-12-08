@@ -431,7 +431,7 @@ ssl_install() {
 	elif [[ "${ID}" == "debian" && ${VERSION_ID} -ge 12 ]]; then
 		${INS} install socat netcat-openbsd -y
   	elif [[ "${ID}" == "ubuntu" && ${VERSION_ID} -ge 24 ]]; then
-   		${INS} install socat netcat-openbsd -y  
+   		${INS} sudo apt-get install netcat-openbsd  
     else
         ${INS} install socat netcat -y
     fi
