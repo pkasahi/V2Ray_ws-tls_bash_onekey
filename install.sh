@@ -430,9 +430,9 @@ ssl_install() {
         ${INS} install socat nc -y
 	elif [[ "${ID}" == "debian" && ${VERSION_ID} -ge 12 ]]; then
 		${INS} install socat netcat-openbsd -y
-  	elif [[ "${ID}" == "ubuntu" && ${VERSION_ID} -ge 24 ]]; then
-   		${INS} sudo apt-get install netcat-openbsd  
-    else
+  	elif [[ "${ID}" == "ubuntu" && ${VERSION_ID} -ge 24.04 ]]; then
+   		${INS} apt-get install netcat-openbsd=1.226-1ubuntu2
+     else
         ${INS} install socat netcat -y
     fi
     judge "安装 SSL 证书生成脚本依赖"
